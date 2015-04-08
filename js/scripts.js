@@ -47,7 +47,30 @@ function changemaker (price, amount_paid) {
         coins[1] = 0;
         coins[2] = 0;
         coins[3] = 0;
-        return coins;
     }
     return coins;
 }
+
+
+$(document).ready(function() {
+
+    $('#changemaker').submit(function(event) {
+
+            var price = parseInt($('input#price').val());
+            var amount_paid = parseInt($('input#amount_paid').val());
+
+            var result = changemaker(price, amount_paid);
+
+            // $('.quarters').empty();
+
+            $('.quarters').text(result[0]);
+            $('.dimes').text(result[1]);
+            $('.nickels').text(result[2]);
+            $('.pennies').text(result[3]);
+
+            $("#result").show();
+            event.preventDefault();
+
+    });
+
+});

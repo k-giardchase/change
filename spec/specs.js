@@ -14,4 +14,7 @@ describe('changemaker', function() {
     it("returns 1 cents when the change is equal to 1 cents", function() {
         expect(changemaker(100, 99)).to.eql([0, 0, 0,1]);
     });
+    it("returns 1 cents when the change is equal to 1 cents", function() {
+        expect(changemaker(100, 63)).to.eql([1, 1, 0,2]);
+    });
 });
